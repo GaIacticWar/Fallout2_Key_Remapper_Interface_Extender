@@ -71,6 +71,16 @@ Fallout 2/
 | **Numpad** | `NUMPAD0-9`, `NUMPADENTER`, `NUMPADCOMMA`, `NUMPADEQUALS` |
 | **Symbols** | `MINUS` (`-`), `EQUALS` (`=`), `LBRACKET` (`[`), `RBRACKET` (`]`), `SEMICOLON` (`;`), `APOSTROPHE` (`'`), `GRAVE` (`` ` ``) `BACKSLASH` (`\`), `COMMA` (`,`), `PERIOD` (`.`), `SLASH` (`/`), `LESS` (`<`), `COLON` (`:`), `UNDERLINE` (`_`), `MULTIPLY` (`*`), `ADD` (`+`) |
 
+| Category | Supported Syntax |
+| :--- | :--- |
+| **Numbers** | `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `0`, `NUMPAD0`, `NUMPAD1`, `NUMPAD2`, `NUMPAD3`, `NUMPAD4`, `NUMPAD5`, `NUMPAD6`, `NUMPAD7`, `NUMPAD8`, `NUMPAD9`, `NUMPAD0` |
+| **Letters** | `A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `K`, `L`, `M`, `N`, `O`, `P`, `Q`, `R`, `S`, `T`, `U`, `V`, `W`, `X`, `Y`, `Z` |
+| **Functions** | `F1`, `F2`, `F3`, `F4`, `F5`, `F6`, `F7`, `F8`, `F9`, `F10`, `F11`, `F12` |
+| **Special** | `ESCAPE`, `BACKSPACE`, `TAB`, `ENTER`, `LCONTROL`, `LSHIFT`, `RSHIFT`, `LALT`, `SPACEBAR`, `CAPSLOCK`, `SCROLLLOCK`, `RCTRL`, `PRINTSCREEN`, `RALT`, `PAUSE`, `LWIN`, `RWIN`, `APPS` |
+| **Movement** |  `UP`, `DOWN`, `LEFT`, `RIGHT`, `INSERT`, `DELETE`, `HOME`, `END`, `PAGEUP`, `PAGEDOWN` |
+| **Numpad** | `NUMPAD0-9`, `MULTIPLY` (`*`), `NUMLOCK`, `NUMPADENTER`, `NUMPADCOMMA`, `NUMPADEQUALS`, `ADD` (`+`) |
+| **Symbols** | `MINUS` (`-`), `EQUALS` (`=`), `LBRACKET` (`[`), `RBRACKET` (`]`), `SEMICOLON` (`;`), `APOSTROPHE` (`'`), `GRAVE` (`` ` ``) `BACKSLASH` (`\`), `COMMA` (`,`), `PERIOD` (`.`), `SLASH` (`/`), `LESS` (`<`), `COLON` (`:`), `UNDERLINE` (`_`) |
+
 > [!WARNING]
 > Always place key-disabling entries at the very bottom of your section, after all custom key rebinds.
 > Syntax: `KEY_NAME = DISABLED`.
