@@ -48,7 +48,7 @@ Fallout 2/
         └── 📁 scripts/
             └── 📄 gl_interface_extender.int
 ```
-ℹ️ *\* Note: `InterfaceExtender_MODERN.ini` can be used as a foundation for your custom settings.*
+*\* Note: `InterfaceExtender_MODERN.ini` can be used as a foundation for your custom settings.*
 
 ## 🔍 INI Search Hierarchy
   1. `mods\InterfaceExtender\InterfaceExtender.ini`
