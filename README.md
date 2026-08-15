@@ -43,6 +43,8 @@ Fallout 2/
 └── 📁 mods/
     └── 📁 InterfaceExtender/
         ├── 📄 InterfaceExtender.ini
+        ├── 📁 presets/
+        │   └── 📄 InterfaceExtender_MODERN.ini (Your preset)
         └── 📁 scripts/
             └── 📄 gl_interface_extender.int
 ```
