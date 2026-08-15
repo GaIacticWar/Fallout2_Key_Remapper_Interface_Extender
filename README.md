@@ -64,7 +64,7 @@ Fallout 2/
 
 ### ⌨️ Available Keys for .INI Configuration
 
-| Category | Supported Syntax |
+| Category | Supported Syntax (US Keyboard Layout) |
 | :---: | :--- |
 | **Numbers** | `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `0` |
 | **Functions** | `F1`, `F2`, `F3`, `F4`, `F5`, `F6`, `F7`, `F8`, `F9`, `F10`, `F11`, `F12` |
