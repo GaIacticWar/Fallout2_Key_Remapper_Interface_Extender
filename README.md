@@ -19,7 +19,7 @@
   Re-press the shortcut that opened a menu (Inventory <code>I</code>, Skilldex <code>S</code>, Pip-Boy Clock <code>Z</code>) to instantly close it.
 
 * **Global Menu Exit Key**  
-  Configure a single master key (e.g., <code>TAB</code> or <code>ESC</code>) to exit almost any open UI screen (Inventory, Containers, Barter, Save/Load, Character Screen, Automap, Pip-Boy, Options).
+  Configure a single master key (e.g., <code>TAB</code> or <code>Q</code>) to exit almost any open UI screen (Inventory, Containers, Barter, Save/Load, Character Screen, Automap, Pip-Boy, Options).
 
 * **Additional Action Shortcuts**  
   Dedicated configurable keys for accepting prompts, ending combat turns, and triggering "Take All" in container interfaces.
