@@ -76,17 +76,21 @@ Fallout 2/
 ```ini
 [Modules]
 ; Enable (1) or Disable (0) the key remapping engine
+; Note: Leave empty to disable
 KeysRemapper=1
 
 [General]
 ; Master hotkey to exit open UI menus and screens (e.g., TAB, ESC)
+; Note: Leave empty to disable
 AdditionalCloseKey=TAB
 
-; Secondary key to end combat turn (e.g., G, F)
-AdditionalEndCombatKey=G
-
 ; Secondary key to accept prompts and dialogs (e.g., E, SPACE)
+; Note: Leave empty to disable
 AdditionalAcceptKey=E
+
+; Secondary key to end combat turn (e.g., G, F)
+; Note: Leave empty to disable
+AdditionalEndCombatKey=G
 
 ; Dedicated key to trigger "Take All" in loot/container windows
 TakeAllKey=R
