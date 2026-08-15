@@ -5,29 +5,29 @@
 <h1 align="center">Key Remapper & Interface Extender</h1>
 
 <p align="justify">
-&nbsp;&nbsp;&nbsp;&nbsp;A lightweight, high-performance sfall script for <b>Fallout 2</b> that introduces modern control customization, smart UI menu toggles, context-aware shortcut protection, and low-level key remapping with zero input latency.
+&nbsp;&nbsp;&nbsp;&nbsp;A lightweight, high-performance sfall script for <b>Fallout 2</b> (and fan-made games built on its engine) that introduces modern control customization, smart UI menu toggles and efficient key remapping with zero input latency.
 </p>
 
 ---
 
 ## 📋 Key Features
 
-* **⚡ Ultra-Fast `O(1)` Key Remapper**  
+* **⚡ Ultra-Fast `O(1)` Key Remapper**
   Translates physical keys to target keys using fixed array lookup tables. Native action suppression prevents remapped targets from triggering duplicate inputs.
   
-* **🧠 Smart UI Menu Toggles**  
+* **🧠 Smart UI Menu Toggles**
   Re-press the shortcut that opened a menu (Inventory <code>I</code>, Skilldex <code>S</code>, Pip-Boy Clock <code>Z</code>) to instantly close it.
 
-* **🔑 Global Menu Exit Key**  
+* **🔑 Global Menu Exit Key**
   Configure a single master key (e.g., <code>TAB</code> or <code>Q</code>) to exit almost any open UI screen (Inventory, Containers, Barter, Save/Load, Character Screen, Automap, Pip-Boy, Options).
 
-* **➕ Additional Action Shortcuts**  
-  Dedicated configurable keys for accepting prompts, ending combat turns, and triggering "Take All" in container interfaces.
+* **➕ Additional Action Keys**
+  Dedicated configurable keys for accepting prompts, ending combat, and triggering "Take All" in container interfaces.
 
-* **🛡️ Context-Aware Input Protection**  
-  Automatically suspends custom shortcuts inside text fields (save game names, numeric quantity inputs) when bound to printable letter/digit keys, preventing accidental UI closing while typing.
+* **🛡️ Context-Aware Input Protection**
+  Automatically suspends custom bindings based on context (e.g., inside text fields for save game names when bound to printable letter/digit keys, preventing accidental inputs while typing).
 
-* **⚖️ Illegalities Validation**  
+* **⚖️ Illegalities Validation**
   Detects conflicting bindings (e.g., identical Accept and Close bindings) and safely disables the conflict before input loops occur.
 
 ---
