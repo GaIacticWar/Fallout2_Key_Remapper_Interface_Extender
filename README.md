@@ -78,17 +78,17 @@ Fallout 2/
 KeysRemapper=1
 
 [General]
-; Secondary key to end combat turn (e.g., SPACE, RETURN, F1)
-AdditionalEndCombatKey=SPACE
-
-; Secondary key to accept prompts and dialogs (e.g., RETURN, SPACE)
-AdditionalAcceptKey=RETURN
-
 ; Master hotkey to exit open UI menus and screens (e.g., TAB, ESC)
 AdditionalCloseKey=TAB
 
+; Secondary key to end combat turn (e.g., G, F)
+AdditionalEndCombatKey=G
+
+; Secondary key to accept prompts and dialogs (e.g., E, SPACE)
+AdditionalAcceptKey=E
+
 ; Dedicated key to trigger "Take All" in loot/container windows
-TakeAllKey=A
+TakeAllKey=R
 
 [KeyMap]
 ; Format: [PHYSICAL_KEY = TARGET_KEY]
