@@ -73,7 +73,7 @@ Fallout 2/
 
 > [!WARNING]
 > Always place key-disabling entries at the very bottom of your section, after all custom key rebinds.
-> Syntax: `KEY_NAME = DISABLED`
+> Syntax: `KEY_NAME = DISABLED`.
 
 Syntax:
 KEY_NAME = DISABLED
