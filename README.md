@@ -54,7 +54,7 @@ Fallout 2/
   4. `config\InterfaceExtender.ini`
   5. `data\scripts\InterfaceExtender.ini`
 
-## Configuration (<sub>`InterfaceExtender.ini`</sub>)
+## Configuration (<small>`InterfaceExtender.ini`</small>)
 ```ini
 [Modules]
 ; Enable (1) or Disable (0) the key remapping engine
