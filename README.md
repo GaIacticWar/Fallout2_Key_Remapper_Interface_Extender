@@ -35,7 +35,7 @@
 ## 📦 Installation
 
 ### 📌 Prerequisites
-* **[sfall](https://github.com/sfall-team/sfall)** (v4.3.0 or higher) must be installed in your Fallout 2 root directory (`ddraw.dll` present).
+* **[sfall](https://github.com/sfall-team/sfall)** (v3.8.40 or higher) must be installed in your Fallout 2 root directory (`ddraw.dll` present).
 
 ### 🗃️ Directory Structure
 
