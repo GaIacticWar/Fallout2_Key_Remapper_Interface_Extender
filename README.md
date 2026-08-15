@@ -135,6 +135,5 @@ F5 = Disabled ; Load Game
 ---
 
 ## 📜 License & Permissions
-<p align="justify"><b>Personal Use:</b> Free to use, modify, and build upon for personal configurations or overhaul mod packs.</p>
-<p align="justify"><b>Redistribution:</b> Please do not re-upload standalone copies to external hosts without prior authorization.</p>
-<p align="justify"><b>Credits:</b> If reusing core logic or code routines in your own public scripts, please credit <b>GalacticWar</b>.</p>
+
+This project is released under custom terms. Please see the [LICENSE.txt](LICENSE.txt) file for full details regarding personal use, redistribution, and attribution.
