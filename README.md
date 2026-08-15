@@ -32,7 +32,12 @@
 
 ---
 
-## 🗃️ Directory Structure
+## 📦 Installation
+
+### 📌 Prerequisites
+* **[sfall](https://github.com/sfall-team/sfall)** (v4.3.0 or higher) must be installed in your Fallout 2 root directory (`ddraw.dll` present).
+
+### 🗃️ Directory Structure
 
 <p align="justify">
 To install the mod manually or include it in your mod manager, structure your Fallout 2 directory as follows:
@@ -50,17 +55,17 @@ Fallout 2/
 ```
 *\* Note: `InterfaceExtender_MODERN.ini` can be used as a foundation for your custom settings.*
 
-## 🔍 INI Search Hierarchy
+---
+
+## ⚙️ Configuration (<small>`InterfaceExtender.ini`</small>)
+
+### 🔍 INI Search Hierarchy
   1. `mods\InterfaceExtender\InterfaceExtender.ini`
   2. `mods\InterfaceExtender.ini`
   3. `config\InterfaceExtender\InterfaceExtender.ini`
   4. `config\InterfaceExtender.ini`
   5. `data\scripts\InterfaceExtender.ini`
   6. `..\InterfaceExtender.ini`
-
----
-
-## ⚙️ Configuration (<small>`InterfaceExtender.ini`</small>)
 
 ### ⌨️ Available Keys for .INI Configuration
 
