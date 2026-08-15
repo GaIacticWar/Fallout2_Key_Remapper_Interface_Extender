@@ -32,6 +32,7 @@ Fallout 2/
         ├── InterfaceExtender.ini
         └── scripts/
             └── gl_interface_extender.int
+```
 INI Search HierarchyThe script dynamically searches for its configuration file in the following order:mods\InterfaceExtender\InterfaceExtender.inimods\InterfaceExtender.iniconfig\InterfaceExtender.iniconfig\InterfaceExtender\InterfaceExtender.inidata\scripts\InterfaceExtender.iniConfiguration (InterfaceExtender.ini)Ini, TOML[Modules]
 ; Enable (1) or Disable (0) the key remapping engine
 KeysRemapper=1
