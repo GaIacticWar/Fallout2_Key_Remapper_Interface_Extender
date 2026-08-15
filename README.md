@@ -76,7 +76,6 @@ Fallout 2/
 ```ini
 [Modules]
 ; Enable (1) or Disable (0) the key remapping engine
-; Note: Leave empty to disable
 KeysRemapper=1
 
 [General]
@@ -93,6 +92,7 @@ AdditionalAcceptKey=E
 AdditionalEndCombatKey=G
 
 ; Dedicated key to trigger "Take All" in loot/container windows
+; Note: Leave empty to disable
 TakeAllKey=R
 
 [KeyMap]
