@@ -1,10 +1,12 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/85c84eb3-1e22-4741-b452-8dd5765b0b07" width="50%" alt="fallout2_logo" />
+  <img src="https://github.com/user-attachments/assets/85c84eb3-1e22-4741-b452-8dd5765b0b07" width="40%" alt="fallout2_logo" />
 </p>
 
 <h1 align="center">Key Remapper & Interface Extender</h1>
 
-A lightweight, high-performance sfall script for **Fallout 2** that introduces modern control customization, smart UI menu toggles, context-aware shortcut protection, and low-level key remapping with zero input latency.
+<p align="justify">
+
+&nbsp;&nbsp;&nbsp;&nbsp;A lightweight, high-performance sfall script for **Fallout 2** that introduces modern control customization, smart UI menu toggles, context-aware shortcut protection, and low-level key remapping with zero input latency.
 
 ---
 
@@ -66,3 +68,5 @@ G=A
 Supported Key Aliases
 CategorySupported SyntaxAlphanumericA-Z, 0-9Function KeysF1 through F12NumpadNUMPAD0-NUMPAD9, NUMPADSTAR, NUMPADPLUS, NUMPADMINUS, NUMPADPERIOD, NUMPADSLASH, NUMPADENTERNavigationUP, DOWN, LEFT, RIGHT, HOME, END, PAGEUP (PGUP), PAGEDOWN (PGDN), INSERT (INS), DELETE (DEL)Special KeysESC, TAB, SPACE, ENTER (RETURN), BACKSPACE, CAPS, LCTRL, RCTRL, LSHIFT, RSHIFT, LALT, RALT, PRTSC, PAUSESymbols-, =, [, ], ;, ', `, \, ,, ., /, <, :, _Unbind KeyOFF, NONE, DISABLED, UNBOUND, NULLCompiling from SourceThis script requires the sfall Script Compiler (part of the sfall modding tools or sfall Script Editor).Ensure sfall.h and dik.h are present in your compiler's include directory.Compile gl_interface_extender.ssl:Bashcompile.exe -p gl_interface_extender.ssl
 Move the compiled gl_interface_extender.int binary to mods/InterfaceExtender/scripts/.License & PermissionsPersonal Use: Free to use, modify, and build upon for personal configurations or overhaul mod packs.Redistribution: Please do not re-upload standalone copies to external hosts without prior authorization.Credits: If reusing core logic or code routines in your own public scripts, please credit GalacticWar.
+
+</p>
