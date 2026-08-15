@@ -78,38 +78,45 @@ Fallout 2/
 > Always place key-disabling entries at the very bottom of your section, after all custom key rebinds.
 > Syntax: `KEY_NAME = DISABLED`.
 
-### 📝 InterfaceExtender.ini
+### 📝 InterfaceExtender.ini (Example)
 ```ini
 [Modules]
-; Enable (1) or Disable (0) the key remapping engine
+; Enables the built-in key rebinder (configures keys defined in the [KeyMap] section below).
+; Options: 1 = Enabled, 0 = Disabled
 KeysRemapper=1
 
+
 [General]
-; Master hotkey to exit open UI menus and screens (e.g., TAB, ESC)
-; Note: Leave empty to disable
+; NOTE: To disable any shortcut in this section, leave its value empty (e.g., AdditionalCloseKey=).
+; These shortcuts function independently of any custom bindings set in [KeyMap].
+
+; Adds a secondary shortcut to close all open menus (Inventory, Character Screen, Loot, etc.).
+; Recommended: 'TAB' (same as in the modern fallout games).
 AdditionalCloseKey=TAB
 
-; Secondary key to accept prompts and dialogs (e.g., E, SPACE)
-; Note: Leave empty to disable
+; Adds a secondary shortcut to confirm or accept prompts and dialogs.
+; Recommended: 'E' (same as in the modern fallout games).
 AdditionalAcceptKey=E
 
-; Secondary key to end combat turn (e.g., G, F)
-; Note: Leave empty to disable
+; Adds a secondary shortcut to end combat.
+; Recommended: Set to the same key used to start combat or any preferred shortcut.
 AdditionalEndCombatKey=G
 
-; Dedicated key to trigger "Take All" in loot/container windows
-; Note: Leave empty to disable
+; Customizes the "Take All" key in the loot interface.
+; Recommended: 'R' (same as in the modern fallout games).
+; NOTE: By engine default, "Take All" inherits whatever key is bound to 'Start Combat' (default 'A').
 TakeAllKey=R
 
-[KeyMap]
-; Format: [PHYSICAL_KEY = TARGET_KEY]
-; Example: Rebinding WASD movement
-W=UP
-A=LEFT
-S=DOWN
-D=RIGHT
 
-; Format: [PHYSICAL_KEY = DISABLED]
+[KeyMap]
+; Format: PHYSICAL_KEY = TARGET_KEY
+; Example: Rebinding WASD movement
+W = Up    ; Move screen Up
+S = Down  ; Move screen Down
+A = Left  ; Move screen Left
+D = Right ; Move screen Right
+
+; Format: PHYSICAL_KEY = DISABLED
 ; Example: Disabling Save & Load Game keys
 F4 = Disabled ; Save Game
 F5 = Disabled ; Load Game
