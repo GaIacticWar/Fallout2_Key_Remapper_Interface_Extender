@@ -136,6 +136,4 @@ F5 = Disabled ; Load Game
 
 ## 📜 License & Permissions
 
-<p align="justify">
 &nbsp;&nbsp;&nbsp;&nbsp;This project is released under custom terms. Please see the [LICENSE.txt](LICENSE.txt) file for full details regarding personal use, redistribution, and attribution.
-</p>
