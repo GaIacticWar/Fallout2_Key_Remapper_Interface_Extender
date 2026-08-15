@@ -1,4 +1,4 @@
-<img width="652" height="298" alt="fallout2_logo" src="https://github.com/user-attachments/assets/b42570cb-3434-4a91-a0af-df4e277ef7e4" />
+<img width="652" float=right vertical-align=top width=35% height="298" alt="fallout2_logo" src="https://github.com/user-attachments/assets/b42570cb-3434-4a91-a0af-df4e277ef7e4" />
 
 
 # Key Remapper & Interface Extender
