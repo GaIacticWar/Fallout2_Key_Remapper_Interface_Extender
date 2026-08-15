@@ -53,6 +53,7 @@ Fallout 2/
   3. `config\InterfaceExtender\InterfaceExtender.ini`
   4. `config\InterfaceExtender.ini`
   5. `data\scripts\InterfaceExtender.ini`
+  6. `..\InterfaceExtender.ini`
 
 ## Configuration (<small>`InterfaceExtender.ini`</small>)
 
