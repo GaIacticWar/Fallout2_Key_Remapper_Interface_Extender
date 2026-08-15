@@ -92,7 +92,7 @@ KeysRemapper=1
 
 
 [General]
-; NOTE: To disable any shortcut in this section, leave its value empty (e.g., AdditionalCloseKey=).
+; Note: To disable any shortcut in this section, leave its value empty (e.g., AdditionalCloseKey=).
 ; These shortcuts function independently of any custom bindings set in [KeyMap].
 
 ; Adds a secondary shortcut to close all open menus (Inventory, Character Screen, Loot, etc.).
@@ -109,7 +109,7 @@ AdditionalEndCombatKey=G
 
 ; Customizes the "Take All" key in the loot interface.
 ; Recommended: 'R' (same as in the modern fallout games).
-; NOTE: By engine default, "Take All" inherits whatever key is bound to 'Start Combat' (default 'A').
+; Note: By engine default, "Take All" inherits whatever key is bound to 'Start Combat' (default 'A').
 TakeAllKey=R
 
 
