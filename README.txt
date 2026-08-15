@@ -2,9 +2,8 @@
 |                                               KEY REMAPPER & INTERFACE EXTENDER                                              |  
 ================================================================================================================================
 
-    A lightweight, high-performance sfall script for Fallout 2 (and fan-made games built on its engine) that introduces modern
-control customization, smart UI menu toggles, context-aware shortcut protection, and low-level key remapping with zero input
-latency.
+    A lightweight sfall script for Fallout 2 (and fan-made games built on its engine) that introduces modern control
+customization, smart UI menu toggles and efficient key remapping with zero input latency.
 
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -22,12 +21,12 @@ latency.
   Configure a single master key (e.g., TAB or Q) to exit almost any open UI screen (Inventory, Containers, Barter, Save/Load,
   Character Screen, Automap, Pip-Boy, Options).
 
-* ➕ Additional Action Shortcuts
-  Dedicated configurable keys for accepting prompts, ending combat turns, and triggering "Take All" in container interfaces.
+* ➕ Additional Action Keys
+  Dedicated configurable keys for accepting prompts, ending combat, and triggering "Take All" in container interfaces.
 
 * 🛡️ Context-Aware Input Protection
-  Automatically suspends custom shortcuts inside text fields (save game names, numeric quantity inputs) when bound to printable
-  letter/digit keys, preventing accidental UI closing while typing.
+  Automatically suspends custom bindings based on context (e.g., inside text fields for save game names when bound to printable
+  letter/digit keys, preventing accidental inputs while typing).
 
 * ⚖️ Illegalities Validation
   Detects conflicting bindings (e.g., identical Accept and Close bindings) and safely disables the conflict before input loops
@@ -62,6 +61,11 @@ Fallout 2/
 
 ℹ* Note: InterfaceExtender_MODERN.ini can be used as a foundation for your custom settings.
 
+
+--------------------------------------------------------------------------------------------------------------------------------
+| ⚙️ [ CONFIGURATION (InterfaceExtender.ini) ]                                                                                 |
+--------------------------------------------------------------------------------------------------------------------------------
+
 ----------------------------------------------------------------
 | 🔍 [ INI SEARCH HIERARCHY ]                                  |
 ----------------------------------------------------------------
@@ -73,15 +77,11 @@ Fallout 2/
 5. data\scripts\InterfaceExtender.ini
 6. ..\InterfaceExtender.ini
 
-
---------------------------------------------------------------------------------------------------------------------------------
-| ⚙️ [ CONFIGURATION (InterfaceExtender.ini) ]                                                                                 |
---------------------------------------------------------------------------------------------------------------------------------
-
 ----------------------------------------------------------------
 | ⌨️ AVAILABLE KEYS FOR .INI CONFIGURATION:                    |
 ----------------------------------------------------------------
 
+ℹ* Note: Fallout 2 uses the US Keyboard Layout.
 --------------------------------------------------------------------------------------------------------------------------------
 |                                         ℹ️ AVAILABLE KEYS FOR .INI CONFIGURATION ℹ️                                         |
 --------------------------------------------------------------------------------------------------------------------------------
@@ -99,7 +99,6 @@ Fallout 2/
 |                                                 Syntax: KEY_NAME = DISABLED.                                                 |
 |------------------------------------------------------------------------------------------------------------------------------|
 
-
 ----------------------------------------------------------------
 | 📝 InterfaceExtender.ini (Example)                           |
 ----------------------------------------------------------------
@@ -111,7 +110,7 @@ KeysRemapper=1
 
 
 [General]
-; NOTE: To disable any shortcut in this section, leave its value empty (e.g., AdditionalCloseKey=).
+; Note: To disable any shortcut in this section, leave its value empty (e.g., AdditionalCloseKey=).
 ; These shortcuts function independently of any custom bindings set in [KeyMap].
 
 ; Adds a secondary shortcut to close all open menus (Inventory, Character Screen, Loot, etc.).
@@ -128,7 +127,7 @@ AdditionalEndCombatKey=G
 
 ; Customizes the "Take All" key in the loot interface.
 ; Recommended: 'R' (same as in the modern fallout games).
-; NOTE: By engine default, "Take All" inherits whatever key is bound to 'Start Combat' (default 'A').
+; Note: By engine default, "Take All" inherits whatever key is bound to 'Start Combat' (default 'A').
 TakeAllKey=R
 
 
