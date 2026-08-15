@@ -10,7 +10,7 @@
 
 ---
 
-## Key Features
+## 📋 Key Features
 
 * **⚡ Ultra-Fast `O(1)` Key Remapper**  
   Translates physical keys to target keys using fixed array lookup tables. Native action suppression prevents remapped targets from triggering duplicate inputs.
