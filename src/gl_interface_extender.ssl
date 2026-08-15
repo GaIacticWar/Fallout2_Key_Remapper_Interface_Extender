@@ -1,0 +1,518 @@
+/*
+    Copyright (c) 2026 GalacticWar. All rights reserved.
+    This script is provided "as is", without warranty of any kind.
+*/
+
+
+// --- Sfall ---
+#include "../headers/sfall.h"
+#include "../headers/dik.h"
+
+
+// --- Constants ---
+#define KEY_INVENTORY        (DIK_I)
+#define KEY_PIPBOY_2000      (DIK_P)
+#define KEY_PIPBOY_CLOCK     (DIK_Z)
+#define KEY_AUTOMAP          (DIK_TAB)
+#define KEY_CHARACTER_SCREEN (DIK_C)
+#define KEY_SKILLDEX         (DIK_S)
+#define KEY_BARTER           (DIK_B)
+#define KEY_START_COMBAT     (DIK_A)
+#define KEY_END_COMBAT       (DIK_RETURN)
+#define KEY_OPTIONS          (DIK_ESCAPE)
+#define KEY_QUICK_SAVE       (DIK_F4)
+#define KEY_QUICK_LOAD       (DIK_F6)
+#define KEY_ACCEPT           (DIK_RETURN)
+#define KEY_TAKE_ALL         (DIK_A)
+
+
+// --- Masks ---
+#define SAVE_LOAD_MASK    (SAVEGAME bwor LOADGAME)
+#define CLOSABLE_MENUS_MASK (INVENTORY bwor INTFACEUSE bwor INTFACELOOT bwor SKILLDEX bwor SAVEGAME bwor LOADGAME bwor BARTER bwor WORLDMAP)
+#define INVENTORY_MENUS_MASK  (INVENTORY bwor INTFACEUSE bwor INTFACELOOT)
+#define ACCEPTABLE_PROMPTS_MASK (COUNTERWIN bwor WORLDMAP bwor SAVEGAME bwor LOADGAME)
+
+#define TEXTWINDOW           (2097168)
+#define TEXTWINDOWMENU       (2097176)
+
+
+// --- Variables ---
+variable keys_remapper;
+variable forward_map; // (O(1) direct physical-to-target lookup)
+variable blocked_map; // (O(1) direct target-blocking lookup)
+variable previous_game_mode := 0;
+
+variable has_additional_keys := false;
+variable key_additional_end_combat := 0;
+variable key_additional_accept   := 0;
+variable key_additional_close  := 0;
+variable key_take_all        := 0;
+
+variable disallow_text_close  := false;
+variable disallow_text_accept := false;
+
+
+// --- Procedure Forward Declarations ---
+procedure start();
+procedure game_mode_change_handler();
+procedure keypress_handler();
+procedure find_ini();
+procedure get_setting_value(variable ini_path, variable section_name, variable setting_name);
+procedure char_to_dik(variable dik_map, variable key_str);
+procedure is_used_for_typing(variable dik_key);
+procedure is_letter(variable dik_key);
+
+
+procedure start() begin
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* Variables                                                                                                                                                                                                                                                  */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    variable keymap_section := 0;
+    variable ini_key        := 0;
+    variable ini_value      := 0;
+    variable section_length := 0;
+    variable index          := 0;
+    variable source_dik     := 0;
+    variable target_dik     := 0;
+
+    variable dik_map := {
+        // Unlabeled & Dummy Slots for Disabling Keys
+        "OFF": 151, "UNLABELED": 151, "NONE": 151, "NULL": 151, "NOTHING": 151, "UNBOUND": 151, "UNBOUNDED": 151, "DISABLE": 151, "DISABLED": 151,
+
+
+        // Numberic & Letter Keys
+        "1": 2, "2": 3, "3": 4, "4": 5, "5": 6, "6": 7, "7": 8, "8": 9, "9": 10, "0": 11,
+
+        "Q": 16, "W": 17, "E": 18, "R": 19, "T": 20, "Y": 21, "U": 22, "I": 23, "O": 24, "P": 25,
+        "A": 30, "S": 31, "D": 32, "F": 33, "G": 34, "H": 35, "J": 36, "K": 37, "L": 38,
+        "Z": 44, "X": 45, "C": 46, "V": 47, "B": 48, "N": 49, "M": 50,
+
+        "F1": 59, "F2": 60, "F3": 61, "F4": 62, "F5": 63, "F6": 64, "F7": 65, "F8": 66, "F9": 67, "F10": 68, "F11": 87, "F12": 88,
+
+        "NUMPAD7": 71, "NUMPAD8": 72, "NUMPAD9": 73,
+        "NUMPAD4": 75, "NUMPAD5": 76, "NUMPAD6": 77,
+        "NUMPAD1": 79, "NUMPAD2": 80, "NUMPAD3": 81,
+        "NUMPAD0": 82,
+
+
+        // Arrow Keys
+        "UP": 200, "UPARROW": 200,
+        "LEFT": 203, "LEFTARROW": 203, "DOWN": 208, "DOWNARROW": 208, "RIGHT": 205, "RIGHTARROW": 205,
+
+
+        // Special Keys
+        "ESC": 1, "ESCAPE": 1,
+        "BACK": 14, "BACKSPACE": 14,
+        "TAB": 15,
+        "RETURN": 28, "ENTER": 28,
+        "LCONTROL": 29, "LEFTCONTROL": 29, "LCTRL": 29, "LEFTCTRL": 29,
+        "LSHIFT": 42, "LEFTSHIFT": 42,
+        "RSHIFT": 54, "RIGHTSHIFT": 54,
+        "LMENU": 56, "LEFTMENU": 56, "LALT": 56, "LEFTALT": 56,
+        "SPACE": 57, "SPACEBAR": 57,
+        "CAPITAL": 58, "CAPS": 58, "CAPSLOCK": 58,
+        "SCROLL": 70, "SCROLLOCK": 70, "SCROLLLOCK": 70,
+        "RCONTROL": 157, "RIGHTCONTROL": 157, "RCTRL": 157, "RIGHTCTRL": 157,
+        "SYSRQ": 183, "PRINT": 183, "PRINTSCREEN": 183, "PRTSC": 183, "PRTSCR": 183,
+        "RMENU": 184, "RIGHTMENU": 184, "RALT": 184, "RIGHTALT": 184,
+        "PAUSE": 197, "PAUSEBREAK": 197, "BREAK": 197, "PAUBRK": 197,
+        "HOME": 199,
+        "PRIOR": 201, "PGUP": 201, "PAGEUP": 201,
+        "END": 207,
+        "NEXT": 209, "PGDN": 209, "PAGEDOWN": 209,
+        "INS": 210, "INSERT": 210,
+        "DEL": 211, "DELETE": 211,
+        "LWIN": 219, "LEFTWIN": 219,
+        "RWIN": 220, "RIGHTWIN": 220,
+        "APPS": 221, "MENU": 221,
+
+
+        // Symbol Keys
+        "-": 12, "MINUS": 12, "HYPHEN": 12,
+        "=": 13, "EQUALS": 13, "EQUAL": 13,
+        "[": 26, "LBRACKET": 26, "LEFTBRACKET": 26,
+        "]": 27, "RBRACKET": 27, "RIGHTBRACKET": 27,
+        ";": 39, "SEMICOLON": 39,
+        "'": 40, "APOSTROPHE": 40, "QUOTE": 40, "SINGLEQUOTE": 40,
+        "`": 41, "GRAVE": 41, "TILDE": 41, "BACKQUOTE": 41,
+        "\\": 43, "\\\\": 43, "BACKSLASH": 43,
+        ",": 51, "COMMA": 51,
+        ".": 52, "PERIOD": 52, "DOT": 52,
+        "/": 53, "SLASH": 53,
+        "<": 86, "LESS": 86, "LESSTHAN": 86, "LANGLEBRACKET": 86, "LEFTANGLEBRACKET": 86,
+        ":": 146, "COLON": 146,
+        "_": 147, "UNDERLINE": 147, "UNDERSCORE": 147,
+
+
+        // Symbol & Special Numpad Keys
+        "*": 55, "MULTIPLY": 55, "STAR": 55, "NUMPADSTAR": 55,
+        "NUMLOCK": 69,
+        "SUBTRACT": 74, "NUMPADSUBTRACT": 74, "NUMPADMINUS": 74,
+        "+": 78, "ADD": 78, "NUMPADADD": 78, "PLUS": 78, "NUMPADPLUS": 78,
+        "DECIMAL": 83, "NUMPADPERIOD": 83,
+        "NUMPADEQUALS": 141, "NUMPADEQUAL": 141,
+        "NUMPADRETURN": 156, "NUMPADENTER": 156,
+        "NUMPADCOMMA": 179,
+        "DIVIDE": 181, "NUMPADSLASH": 181
+    };
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* Game Load Logic                                                                                                                                                                                                                                      */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    if (game_loaded) then begin
+        /* ------------------------- Bug Patch ------------------------ */
+        // Patches game getting stuck in a loop after saving/loading (due to 'set_sfall_return')
+        clear_keyboard_buffer; // Isn't currently necessary, but It's kept as a safeguard
+        /* ------------------------------------------------------------ */
+
+
+        /* ------------------------------------------------------ Configuration File ------------------------------------------------------ */
+        // Search for the .ini
+        variable ini_path := find_ini;
+
+        // Early exit if there is no .ini
+        if (ini_path == -1) then return;
+
+        // Populate the settings
+        keys_remapper := get_setting_value(ini_path, "Modules", "KeysRemapper");
+
+        variable key_additional_end_combat_str := get_ini_string(ini_path + "|General|AdditionalEndCombatKey");
+        variable key_additional_accept_str    := get_ini_string(ini_path + "|General|AdditionalAcceptKey");
+        variable key_additional_close_str    := get_ini_string(ini_path + "|General|AdditionalCloseKey");
+        variable key_take_all_str           := get_ini_string(ini_path + "|General|TakeAllKey");
+
+        key_additional_end_combat := char_to_dik(dik_map, key_additional_end_combat_str);
+        key_additional_accept    := char_to_dik(dik_map, key_additional_accept_str);
+        key_additional_close    := char_to_dik(dik_map, key_additional_close_str);
+        key_take_all           := char_to_dik(dik_map, key_take_all_str);
+        /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+
+        /* ------------------------------------------------------ Illegalities Check ------------------------------------------------------ */
+        // Disables and warns the user if there are illegal key configs
+        if (key_additional_accept == key_additional_close and key_additional_accept != 0) then begin
+            key_additional_accept := 0;
+            key_additional_close  := 0;
+            display_msg("Conflict between Additional Accept and Close keys.");
+        end
+
+        /*
+        else if (key_additional_accept != 0 and not is_letter_key(key_additional_accept)) then begin
+            key_additional_accept := 0;
+            display_msg("The Additional Accept key isn't valid.");
+        end
+
+        if (key_additional_end_combat != 0 and not is_letter_key(key_additional_end_combat)) then begin
+            key_additional_end_combat := 0;
+            display_msg("The Additional End Combat key isn't valid.");
+        end
+
+        if (key_take_all != 0 and not is_letter_key(key_take_all)) then begin
+            key_take_all := 0;
+            display_msg("The Take All key isn't valid.");
+        end
+        */
+        /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+
+        /* --------------------------------------------------------- Optimization --------------------------------------------------------- */
+        // Disables the additional keys if they use the 'Disabled' dik code
+        if (key_additional_accept == 151) then key_additional_accept := 0;
+        if (key_additional_close == 151) then key_additional_close := 0;
+        if (key_additional_end_combat == 151) then key_additional_end_combat := 0;
+        if (key_take_all == 151) then key_take_all := 0;
+
+        // Checks if the user has any additional keys
+        if (key_additional_accept != 0 or key_additional_close != 0 or key_additional_end_combat != 0 or key_take_all != 0) then has_additional_keys := true;
+
+        // Precomputes if the additional accept and close keys are used for typing
+        disallow_text_accept := is_used_for_typing(key_additional_accept);
+        disallow_text_close  := is_used_for_typing(key_additional_close);
+        /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+
+        /* ------------------------------------------------------------ Keymap ------------------------------------------------------------ */
+        if (keys_remapper == 1) then begin
+            variable has_valid_remaps := false;
+
+            // Key map formation
+            keymap_section := sfall_func2("get_ini_section", ini_path, "KeyMap");
+
+            // Initialize fixed O(1) arrays
+            forward_map    := temp_array(256, 0);
+            blocked_map    := temp_array(256, 0);
+
+            section_length := len_array(keymap_section);
+            index          := 0;
+
+            while (index < section_length) do begin
+                ini_key   := array_key(keymap_section, index);
+                ini_value := get_array(keymap_section, ini_key);
+
+                source_dik := char_to_dik(dik_map, ini_key);   // Physical key pressed (e.g., "A" = 30)
+                target_dik := char_to_dik(dik_map, ini_value); // Target key sent (e.g., "G" = 34)
+
+                if (source_dik > 0 and target_dik > 0 and source_dik != target_dik) then begin
+                    set_array(forward_map, source_dik, target_dik); // forward_map[30] = 34
+                    set_array(blocked_map, target_dik, 1);
+                    has_valid_remaps := true;
+                end
+
+                index := index + 1;
+            end
+
+            // Optimization: Only turn the arrays permanent if there are valid remaps, otherwise disable the keys_remapper
+            if (has_valid_remaps) then begin
+                fix_array(forward_map);
+                fix_array(blocked_map);
+            end
+
+            else keys_remapper := 0;
+        end
+        /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+
+        /* -------------------- Hooks Registration -------------------- */
+        // Register the hook if either mod is active
+        register_hook_proc(HOOK_KEYPRESS, keypress_handler);
+        register_hook_proc(HOOK_GAMEMODECHANGE, game_mode_change_handler);
+        /* ------------------------------------------------------------ */
+    end
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+end
+
+
+procedure game_mode_change_handler() begin
+    variable current_game_mode := get_game_mode;
+
+    // Fixes a bug related to the use of 'set_sfall_return' (we love those...)
+    if (current_game_mode != previous_game_mode) then begin
+        clear_keyboard_buffer;
+
+        previous_game_mode := current_game_mode;
+    end
+end
+
+
+procedure keypress_handler() begin
+    variable is_pressed := get_sfall_arg;
+    variable key_code   := get_sfall_arg;
+    variable game_mode  := get_game_mode;
+
+    variable source_key := key_code;
+    variable mapped_key := 0;
+
+
+    // Filters out invalid inputs (safety measure)
+    if (key_code <= 0) then return 0;
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* Additional Keys Logic                                                                                                                                                                                                                                      */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    if (has_additional_keys) then begin
+        /* ---------------------------------------------------------- Exceptions ---------------------------------------------------------- */
+        // Supresses the old take all key, if needed
+        if (source_key == KEY_TAKE_ALL and key_take_all != 0 and game_mode bwand INTFACELOOT) then set_sfall_return(151);
+
+        // Disables in text windows
+        else if (game_mode == TEXTWINDOW or game_mode == TEXTWINDOWMENU) then begin
+            // Allows additional close and accept keys if not used for typing
+            /**/ if (source_key == key_additional_accept) then if (disallow_text_accept) then return 0;
+            else if (source_key == key_additional_close)  then if (disallow_text_close) then return 0;
+
+            else return 0;
+        end
+        /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+
+        /* -------------------------------------------------------- Additional Keys ------------------------------------------------------- */
+        if (is_pressed == 1) then begin
+            // Accepts prompt (additional accept key)
+            /**/ if (source_key == key_additional_accept and game_mode bwand ACCEPTABLE_PROMPTS_MASK) then begin
+                set_sfall_return(151);
+                tap_key(KEY_ACCEPT);
+                return 0;
+            end
+
+            // Takes all the loot (take all key)
+            else if (source_key == key_take_all and game_mode bwand INTFACELOOT) then begin
+                set_sfall_return(151);
+                tap_key(KEY_TAKE_ALL);
+                return 0;
+            end
+
+            // Ends combat (key_additional_end_combat)
+            else if (source_key == key_additional_end_combat and game_mode bwand PCOMBAT) then begin
+                set_sfall_return(151);
+                tap_key(KEY_END_COMBAT);
+                return 0;
+            end
+        end
+        /* -------------------------------------------------------------------------------------------------------------------------------- */
+    end
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* Keys Remapper Logic                                                                                                                                                                                                                                        */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    if (keys_remapper == 1) then begin
+        variable run_remapper := true;
+
+
+        /* -------------------------- Lookup -------------------------- */
+        // O(1) Instant Array Lookup
+        mapped_key := get_array(forward_map, key_code);
+        /* ------------------------------------------------------------ */
+
+
+        /* ---------------------------------------------------------- Exceptions ---------------------------------------------------------- */
+        // Disable remapper in save/load menu (unless exceptions are met)
+        if (game_mode bwand SAVE_LOAD_MASK) then begin
+            // Allow additional close and accept keys
+            if (source_key != key_additional_close and source_key != key_additional_accept) then begin
+                // Allow remaped arrow keys in the save/load menu
+                if (mapped_key != DIK_UPARROW and mapped_key != DIK_LEFTARROW and mapped_key != DIK_DOWNARROW and mapped_key != DIK_RIGHTARROW) then return 0;
+                else if (not is_letter(source_key)) then return 0;
+            end
+        end
+
+        // Disable remapper in options menu (unless it's the additional close key)
+        else if (game_mode bwand ESCMENU and source_key != key_additional_close) then return 0;
+
+        // Supresses the remapped take all key, if needed
+        else if (mapped_key == KEY_TAKE_ALL and key_take_all != 0 and game_mode bwand INTFACELOOT) then run_remapper := false;
+        /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+
+        /* ------------------------- Remapper ------------------------- */
+        if (run_remapper) then begin
+            // Replaces physical keypress with mapped target DIK code
+            if (mapped_key != 0) then begin
+                set_sfall_return(mapped_key);
+                key_code := mapped_key; // Pass the translated key to the next block
+            end
+
+            // Prevents keys used as remap targets from triggering native actions
+            else if (get_array(blocked_map, key_code) != 0) then begin
+                set_sfall_return(151);
+                key_code := 151;
+            end
+        end
+        /* ------------------------------------------------------------ */
+    end
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* Interface Extender Logic                                                                                                                                                                                                                                   */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    if (is_pressed == 1) then begin
+        variable run_code := false;
+
+
+        /* ----------------------------------------------------- Additional Close Key ----------------------------------------------------- */
+        // Checks if it should close the menu (additional close key)
+        if (source_key == key_additional_close) then begin
+            /**/ if (game_mode bwand CLOSABLE_MENUS_MASK) then run_code := true;
+            else if (key_code != KEY_PIPBOY_2000      and game_mode bwand PIPBOY)     then run_code := true;
+            else if (key_code != KEY_CHARACTER_SCREEN and game_mode bwand CHARSCREEN) then run_code := true;
+            else if (key_code != KEY_AUTOMAP          and game_mode bwand AUTOMAP)    then run_code := true;
+            else if (key_code != KEY_SKILLDEX         and game_mode bwand ESCMENU)    then run_code := true;
+        end
+        /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+
+        /* ------------------------------------------------------ Interface Extender ------------------------------------------------------ */
+        // Checks if it should close the menu
+        else if (key_code == KEY_INVENTORY    and game_mode bwand INVENTORY_MENUS_MASK) then run_code := true;
+        else if (key_code == KEY_SKILLDEX     and game_mode bwand SKILLDEX)           then run_code := true;
+        else if (key_code == KEY_PIPBOY_CLOCK and game_mode bwand PIPBOY)           then run_code := true;
+     /* else if (key_code == KEY_BARTER       and game_mode bwand BARTER)         then run_code := true; */
+        /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+
+        /* ------------------------ Close Menu ------------------------ */
+        // If true, closes the menu
+        if (run_code) then begin
+            set_sfall_return(151); // This overrides the earlier set_sfall_return so the menu actually closes
+            tap_key(KEY_OPTIONS);
+        end
+        /* ------------------------------------------------------------ */
+    end
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+end
+
+
+procedure find_ini() begin
+    variable current_path;
+    variable paths_to_check :=
+    [
+        "mods\\InterfaceExtender\\InterfaceExtender.ini",
+        "mods\\InterfaceExtender.ini",
+        "config\\InterfaceExtender.ini",
+        "config\\InterfaceExtender\\InterfaceExtender.ini",
+        "data\\scripts\\InterfaceExtender.ini",
+        "InterfaceExtender.ini"
+    ];
+
+    foreach (current_path in paths_to_check) begin
+        // If the array length is greater than 0, the file exists and has content
+        if (len_array(get_ini_sections(current_path)) > 0) then return current_path;
+    end
+
+    return -1;
+end
+
+
+procedure get_setting_value(variable ini_path, variable section_name, variable setting_name) begin
+    return get_ini_setting(ini_path + "|" + section_name + "|" + setting_name);
+end
+
+
+procedure char_to_dik(variable dik_map, variable key_str) begin
+    variable dik_code := 0;
+
+    key_str := sfall_func2("string_to_case", key_str, 1);
+    dik_code := get_array(dik_map, key_str);
+
+    return dik_code;
+end
+
+
+procedure is_used_for_typing(variable dik_key) begin
+    // Checks if the key is used for typing characters, symbols, or text editing
+    if  ((dik_key >=   2 and dik_key <=  14)
+      or (dik_key >=  16 and dik_key <=  28)
+      or (dik_key >=  30 and dik_key <=  55)
+      or (dik_key >=  57 and dik_key <=  58)
+      or (dik_key >=  71 and dik_key <=  83)
+      or (dik_key >= 141 and dik_key <= 147)
+      or (dik_key == 156 /***************/ )
+      or (dik_key == 179 /***************/ )
+      or (dik_key == 181 /***************/ )
+      or (dik_key == 211)) then return true;
+
+    else return false;
+end
+
+
+procedure is_letter(variable dik_key) begin
+
+    if (dik_key >= 16 and dik_key <= 25
+     or dik_key >= 30 and dik_key <= 38
+     or dik_key >= 44 and dik_key <= 50) then begin
+        return true;
+    end
+
+    else return false;
+end
