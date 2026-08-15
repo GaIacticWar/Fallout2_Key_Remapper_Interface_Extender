@@ -81,7 +81,8 @@ Fallout 2/
 | ⌨️ AVAILABLE KEYS FOR .INI CONFIGURATION:                    |
 ----------------------------------------------------------------
 
-ℹ* Note: Fallout 2 uses the US Keyboard Layout.
+ℹ* Note: Fallout 2 uses the US Keyboard Layout. If you use a non-US layout, test your desired key inside an in-game text window
+   (such as a save game name prompt) to verify input.
 --------------------------------------------------------------------------------------------------------------------------------
 |                                         ℹ️ AVAILABLE KEYS FOR .INI CONFIGURATION ℹ️                                         |
 --------------------------------------------------------------------------------------------------------------------------------
