@@ -72,7 +72,11 @@ Fallout 2/
 | **Symbols** | `MINUS` (`-`), `EQUALS` (`=`), `LBRACKET` (`[`), `RBRACKET` (`]`), `SEMICOLON` (`;`), `APOSTROPHE` (`'`), `GRAVE` (`` ` ``) `BACKSLASH` (`\`), `COMMA` (`,`), `PERIOD` (`.`), `SLASH` (`/`), `LESS` (`<`), `COLON` (`:`), `UNDERLINE` (`_`), `MULTIPLY` (`*`), `ADD` (`+`) |
 
 > [!WARNING]
-> If you wish to disable keys, add **AFTERWARDS** (after all the key rebind entries) with `[KEY_YOU_WANT_TO_DISABLE] = DISABLED`.
+> Always place key-disabling entries at the very bottom of your section, after all custom key rebinds.
+> Syntax: `KEY_NAME = DISABLED`
+
+Syntax:
+KEY_NAME = DISABLED
 
 ### InterfaceExtender.ini
 ```ini
