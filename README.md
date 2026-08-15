@@ -40,11 +40,11 @@ To install the mod manually or include it in your mod manager, structure your Fa
 
 ```text
 Fallout 2/
-└── mods/
-    └── InterfaceExtender/
-        ├── InterfaceExtender.ini
-        └── scripts/
-            └── gl_interface_extender.int
+└── 📁 mods/
+    └── 📁 InterfaceExtender/
+        ├── 📄 InterfaceExtender.ini
+        └── 📁 scripts/
+            └── 📄 gl_interface_extender.int
 ```
 
 ## INI Search Hierarchy
@@ -55,6 +55,23 @@ Fallout 2/
   5. `data\scripts\InterfaceExtender.ini`
 
 ## Configuration (<small>`InterfaceExtender.ini`</small>)
+
+### Available Keys for .INI Configuration
+
+| Category | Supported Syntax |
+| :--- | :--- |
+| **Numbers** | `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `0` |
+| **Letters** | `A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `K`, `L`, `M`, `N`, `O`, `P`, `Q`, `R`, `S`, `T`, `U`, `V`, `W`, `X`, `Y`, `Z` |
+| **Functions** | `F1`, `F2`, `F3`, `F4`, `F5`, `F6`, `F7`, `F8`, `F9`, `F10`, `F11`, `F12` |
+| **Special** | `ESC`, `TAB`, `BACKSPACE`, `ENTER`, `SPACEBAR`, `CAPSLOCK`, `NUMLOCK`, `SCROLLLOCK`, `LSHIFT`, `RSHIFT`, `LCTRL`, `RCTRL`, `LALT`, `RALT`, `PRINTSCREEN`, `PAUSE`, `LWIN`, `RWIN`, `APPS`, `MENU` |
+| **Movement** | `INSERT`, `DELETE`, `HOME`, `END`, `PAGEUP`, `PAGEDOWN`, `UP`, `DOWN`, `LEFT`, `RIGHT` |
+| **Numpad** | `NUMPAD0-9`, `NUMPADENTER`, `NUMPADCOMMA`, `NUMPADEQUALS` |
+| **Symbols** | `MINUS` (`-`), `EQUALS` (`=`), `LBRACKET` (`[`), `RBRACKET` (`]`), `SEMICOLON` (`;`), `APOSTROPHE` (`'`), `GRAVE` (`` ` ``) `BACKSLASH` (`\`), `COMMA` (`,`), `PERIOD` (`.`), `SLASH` (`/`), `LESS` (`<`), `COLON` (`:`), `UNDERLINE` (`_`), `MULTIPLY` (`*`), `ADD` (`+`) |
+
+> [!WARNING]
+> If you wish to disable keys, add **AFTERWARDS** (after all the key rebind entries) with `[KEY_YOU_WANT_TO_DISABLE] = DISABLED`.
+
+### InterfaceExtender.ini
 ```ini
 [Modules]
 ; Enable (1) or Disable (0) the key remapping engine
@@ -74,21 +91,34 @@ AdditionalCloseKey=TAB
 TakeAllKey=A
 
 [KeyMap]
-; Format: PHYSICAL_KEY=TARGET_KEY
-; Example: Rebinding WASD movement or remapping action keys
+; Format: [PHYSICAL_KEY = TARGET_KEY]
+; Example: Rebinding WASD movement
 W=UP
 A=LEFT
 S=DOWN
 D=RIGHT
-G=A
+
+; Format: [PHYSICAL_KEY = DISABLED]
+; Example: Disabling Save & Load Game keys
+F4 = Disabled ; Save Game
+F5 = Disabled ; Load Game
+
 ```
 
-[KeyMap]
-; Format: PHYSICAL_KEY=TARGET_KEY
-; Example: Rebinding WASD movement or remapping action keys
-W=UP
-A=LEFT
-S=DOWN
-D=RIGHT
-G=A
-Supported Key AliasesCategorySupported SyntaxAlphanumericA-Z, 0-9Function KeysF1 through F12NumpadNUMPAD0-NUMPAD9, NUMPADSTAR, NUMPADPLUS, NUMPADMINUS, NUMPADPERIOD, NUMPADSLASH, NUMPADENTERNavigationUP, DOWN, LEFT, RIGHT, HOME, END, PAGEUP (PGUP), PAGEDOWN (PGDN), INSERT (INS), DELETE (DEL)Special KeysESC, TAB, SPACE, ENTER (RETURN), BACKSPACE, CAPS, LCTRL, RCTRL, LSHIFT, RSHIFT, LALT, RALT, PRTSC, PAUSESymbols-, =, [, ], ;, ', `, \, ,, ., /, <, :, _Unbind KeyOFF, NONE, DISABLED, UNBOUND, NULLCompiling from SourceLicense & PermissionsPersonal Use: Free to use, modify, and build upon for personal configurations or overhaul mod packs.Redistribution: Please do not re-upload standalone copies to external hosts without prior authorization.Credits: If reusing core logic or code routines in your own public scripts, please credit GalacticWar.
+---
+
+## Compiling from Source
+Ensure sfall.h and dik.h are present in your compiler's include directory.
+
+Compile gl_interface_extender.ssl:
+
+Bash
+compile.exe -p gl_interface_extender.ssl
+Move the compiled gl_interface_extender.int binary to mods/InterfaceExtender/scripts/.
+
+---
+
+## License & Permissions
+<p align="justify"><b>Personal Use:</b> Free to use, modify, and build upon for personal configurations or overhaul mod packs.</p>
+<p align="justify"><b>Redistribution:</b> Please do not re-upload standalone copies to external hosts without prior authorization.</p>
+<p align="justify"><b>Credits:</b> If reusing core logic or code routines in your own public scripts, please credit <b>GalacticWar</b>.</p>
