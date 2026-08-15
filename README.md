@@ -2,9 +2,7 @@
 
 <br><br>
 
-<br><br>
-
-# Key Remapper & Interface Extender
+## Key Remapper & Interface Extender
 
 A lightweight, high-performance sfall script for **Fallout 2** that introduces modern control customization, smart UI menu toggles, context-aware shortcut protection, and low-level key remapping with zero input latency.
 
