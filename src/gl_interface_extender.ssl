@@ -192,33 +192,6 @@ procedure start() begin
         /* -------------------------------------------------------------------------------------------------------------------------------- */
 
 
-        /* ------------------------------------------------------ Illegalities Check ------------------------------------------------------ */
-        // Disables and warns the user if there are illegal key configs
-        if (key_additional_accept == key_additional_close and key_additional_accept != 0) then begin
-            key_additional_accept := 0;
-            key_additional_close  := 0;
-            display_msg("Conflict between Additional Accept and Close keys.");
-        end
-
-        /*
-        else if (key_additional_accept != 0 and not is_letter_key(key_additional_accept)) then begin
-            key_additional_accept := 0;
-            display_msg("The Additional Accept key isn't valid.");
-        end
-
-        if (key_additional_end_combat != 0 and not is_letter_key(key_additional_end_combat)) then begin
-            key_additional_end_combat := 0;
-            display_msg("The Additional End Combat key isn't valid.");
-        end
-
-        if (key_take_all != 0 and not is_letter_key(key_take_all)) then begin
-            key_take_all := 0;
-            display_msg("The Take All key isn't valid.");
-        end
-        */
-        /* -------------------------------------------------------------------------------------------------------------------------------- */
-
-
         /* --------------------------------------------------------- Optimization --------------------------------------------------------- */
         // Disables the additional keys if they use the 'Disabled' dik code
         if (key_additional_accept == 151) then key_additional_accept := 0;
@@ -272,6 +245,29 @@ procedure start() begin
             end
 
             else keys_remapper := 0;
+        end
+        /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+
+        /* ------------------------------------------------------ Illegalities Check ------------------------------------------------------ */
+        // Disables and warns the user if there are illegal key configs
+        if (key_additional_accept == key_additional_close and key_additional_accept != 0) then begin
+            key_additional_accept := 0;
+            key_additional_close  := 0;
+            display_msg("Conflict between Additional Accept and Close keys.");
+        end
+
+        // Resolves active DIK for Spacebar. If Spacebar was remapped, check against its target key instead.
+        variable space_target := 57;
+        if (keys_remapper == 1 and forward_map != 0) then begin
+            if (get_array(forward_map, 57) != 0) then begin
+                space_target := get_array(forward_map, 57);
+            end
+        end
+        // Disallows the Additional End Combat key to be mapped to the
+        if (key_additional_end_combat != 0 and key_additional_end_combat == space_target) then begin
+            key_additional_end_combat := 0;
+            display_msg("Conflict: Additional End Combat key cannot be bound to the End Turn key.");
         end
         /* -------------------------------------------------------------------------------------------------------------------------------- */
 
