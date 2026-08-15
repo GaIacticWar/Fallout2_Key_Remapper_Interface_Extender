@@ -55,6 +55,8 @@ Fallout 2/
   5. `data\scripts\InterfaceExtender.ini`
   6. `..\InterfaceExtender.ini`
 
+---
+
 ## Configuration (<small>`InterfaceExtender.ini`</small>)
 
 ### Available Keys for .INI Configuration
