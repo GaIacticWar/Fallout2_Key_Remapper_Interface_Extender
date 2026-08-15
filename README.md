@@ -120,7 +120,7 @@ F5 = Disabled ; Load Game
 1. Ensure `sfall.h` and `dik.h` are placed in your Fallout Script Editor's `headers` (or `include`) folder.
 2. Open `gl_interface_extender.ssl` in Fallout Script Editor and compile it (**F8** / **Compile**).
 3. Move the compiled `gl_interface_extender.int` file to `mods/InterfaceExtender/scripts/`.
-4. Move, also, `InterfaceExtender.ini` to a valid path (e.g., `mods/InterfaceExtender/`) and personalize it to your liking.
+4. Move, also, `InterfaceExtender.ini` to a valid path (e.g., `mods/InterfaceExtender/`).
 
 ---
 
