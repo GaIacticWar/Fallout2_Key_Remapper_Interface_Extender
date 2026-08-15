@@ -54,8 +54,9 @@ Fallout 2/
   4. `config\InterfaceExtender.ini`
   5. `data\scripts\InterfaceExtender.ini`
 
-## Configuration (InterfaceExtender.ini)
-Ini, TOML[Modules]
+## Configuration (<sub>`InterfaceExtender.ini`</sub>)
+```ini
+[Modules]
 ; Enable (1) or Disable (0) the key remapping engine
 KeysRemapper=1
 
@@ -71,6 +72,16 @@ AdditionalCloseKey=TAB
 
 ; Dedicated key to trigger "Take All" in loot/container windows
 TakeAllKey=A
+
+[KeyMap]
+; Format: PHYSICAL_KEY=TARGET_KEY
+; Example: Rebinding WASD movement or remapping action keys
+W=UP
+A=LEFT
+S=DOWN
+D=RIGHT
+G=A
+```
 
 [KeyMap]
 ; Format: PHYSICAL_KEY=TARGET_KEY
