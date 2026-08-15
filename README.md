@@ -12,27 +12,27 @@
 
 ## Key Features
 
-* **`O(1)` Ultra-Fast Key Remapper**  
+* **⚡ Ultra-Fast `O(1)` Key Remapper**  
   Translates physical keys to target keys using fixed array lookup tables. Native action suppression prevents remapped targets from triggering duplicate inputs.
   
-* **Smart UI Menu Toggles**  
+* **🧠 Smart UI Menu Toggles**  
   Re-press the shortcut that opened a menu (Inventory <code>I</code>, Skilldex <code>S</code>, Pip-Boy Clock <code>Z</code>) to instantly close it.
 
-* **Global Menu Exit Key**  
+* **🔑 Global Menu Exit Key**  
   Configure a single master key (e.g., <code>TAB</code> or <code>Q</code>) to exit almost any open UI screen (Inventory, Containers, Barter, Save/Load, Character Screen, Automap, Pip-Boy, Options).
 
-* **Additional Action Shortcuts**  
+* **➕ Additional Action Shortcuts**  
   Dedicated configurable keys for accepting prompts, ending combat turns, and triggering "Take All" in container interfaces.
 
-* **Context-Aware Input Protection**  
+* **🛡️ Context-Aware Input Protection**  
   Automatically suspends custom shortcuts inside text fields (save game names, numeric quantity inputs) when bound to printable letter/digit keys, preventing accidental UI closing while typing.
 
-* **Illegalities Validation**  
+* **⚖️ Illegalities Validation**  
   Detects conflicting bindings (e.g., identical Accept and Close bindings) and safely disables the conflict before input loops occur.
 
 ---
 
-## Directory Structure
+## 🗃️ Directory Structure
 
 <p align="justify">
 To install the mod manually or include it in your mod manager, structure your Fallout 2 directory as follows:
@@ -44,12 +44,13 @@ Fallout 2/
     └── 📁 InterfaceExtender/
         ├── 📄 InterfaceExtender.ini
         ├── 📁 presets/
-        │   └── 📄 InterfaceExtender_MODERN.ini (use this preset as a foundation)
+        │   └── 📄 InterfaceExtender_MODERN.ini
         └── 📁 scripts/
             └── 📄 gl_interface_extender.int
 ```
+*\* Note: `InterfaceExtender_MODERN.ini` can be used as a foundation for your custom settings.*
 
-## INI Search Hierarchy
+## 🔍 INI Search Hierarchy
   1. `mods\InterfaceExtender\InterfaceExtender.ini`
   2. `mods\InterfaceExtender.ini`
   3. `config\InterfaceExtender\InterfaceExtender.ini`
@@ -59,9 +60,9 @@ Fallout 2/
 
 ---
 
-## Configuration (<small>`InterfaceExtender.ini`</small>)
+## ⚙️ Configuration (<small>`InterfaceExtender.ini`</small>)
 
-### Available Keys for .INI Configuration
+### ⌨️ Available Keys for .INI Configuration
 
 | Category | Supported Syntax |
 | :---: | :--- |
@@ -77,7 +78,7 @@ Fallout 2/
 > Always place key-disabling entries at the very bottom of your section, after all custom key rebinds.
 > Syntax: `KEY_NAME = DISABLED`.
 
-### InterfaceExtender.ini
+### 📝 InterfaceExtender.ini
 ```ini
 [Modules]
 ; Enable (1) or Disable (0) the key remapping engine
@@ -117,7 +118,7 @@ F5 = Disabled ; Load Game
 
 ---
 
-## Compiling from Source
+## 🛠️ Compiling from Source
 
 1. Ensure `sfall.h` and `dik.h` are placed in your Fallout Script Editor's `headers` (or `include`) folder.
 2. Open `gl_interface_extender.ssl` in Fallout Script Editor and compile it (**F8** / **Compile**).
@@ -126,7 +127,7 @@ F5 = Disabled ; Load Game
 
 ---
 
-## License & Permissions
+## 📜 License & Permissions
 <p align="justify"><b>Personal Use:</b> Free to use, modify, and build upon for personal configurations or overhaul mod packs.</p>
 <p align="justify"><b>Redistribution:</b> Please do not re-upload standalone copies to external hosts without prior authorization.</p>
 <p align="justify"><b>Credits:</b> If reusing core logic or code routines in your own public scripts, please credit <b>GalacticWar</b>.</p>
