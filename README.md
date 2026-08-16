@@ -15,7 +15,7 @@
 * **⚡ Instant Key Remapping:** Easily rebind keys without input lag or duplicate actions.
 * **🧠 Smart UI Toggles:** Re-press any menu key (Inventory, Skilldex, Pip-Boy) to instantly close it.
 * **🔑 Global Exit Key:** Set a single master key (e.g., <code>TAB</code> or <code>Q</code>) to close any open UI screen.
-* **➕ Additional Binds:** Dedicated binds for "End Combat", "Accept" option in prompts and "Take All" in loot interfaces.
+* **➕ Additional Binds:** Dedicated keybinds to End Combat, Accept prompts, and "Take All" from containers.
 * **🛡️ Context-Aware:** Suspends custom bindings based on context (e.g., in text fields), preventing unintended inputs.
 
 ---
