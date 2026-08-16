@@ -55,6 +55,12 @@ Fallout 2/
 ```
 *\* Note: `InterfaceExtender_MODERN.ini` can be used as a foundation for your custom settings.*
 
+### 📝 Mod Activation
+
+<p align="justify">
+Open your sfall mod loading file (<code>mods_order.txt</code> or <code>mods_order.ini</code> inside your <code>mods/</code> folder) and add the mod folder name on a new line:
+</p>
+
 ---
 
 ## ⚙️ Configuration (<small>`InterfaceExtender.ini`</small>)
@@ -83,7 +89,7 @@ Fallout 2/
 > Always place key-disabling entries at the very bottom of your section, after all custom key rebinds.
 > Syntax: `KEY_NAME = DISABLED`.
 
-### 📝 InterfaceExtender.ini (Example)
+### 🗒️ InterfaceExtender.ini (Example)
 ```ini
 [Modules]
 ; Enables the built-in key rebinder (configures keys defined in the [KeyMap] section below).
