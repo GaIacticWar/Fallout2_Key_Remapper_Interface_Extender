@@ -40,7 +40,7 @@
 ### 🗃️ Directory Structure
 
 <p align="justify">
-To install the mod manually or include it in your mod manager, structure your Fallout 2 directory as follows:
+&nbsp;&nbsp;&nbsp;&nbsp;To install the mod manually or include it in your mod manager, structure your Fallout 2 directory as follows:
 </p>
 
 ```text
@@ -58,7 +58,7 @@ Fallout 2/
 ### 📝 Mod Activation
 
 <p align="justify">
-Open your sfall mod loading file (<code>mods_order.txt</code> or <code>mods_order.ini</code> inside your <code>mods/</code> folder) and add the mod folder name on a new line:
+&nbsp;&nbsp;&nbsp;&nbsp;Open your sfall mod loading file (<code>mods_order.txt</code> or <code>mods_order.ini</code> inside your <code>mods/</code> folder) and add the mod folder name on a new line:
 </p>
 
 ```text
