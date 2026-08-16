@@ -37,11 +37,13 @@ customization, smart UI menu toggles and efficient key remapping with zero input
 Fallout 2/
 └── 📁 mods/
     └── 📁 InterfaceExtender/
-        ├── 📄 InterfaceExtender.ini
+        ├── 📝 InterfaceExtender.ini
+        ├── ⚖️ LICENSE.txt
+        ├── 📖 README.txt
         ├── 📁 presets/
-        │   └── 📄 InterfaceExtender_Modern.ini
+        │   └── 📝 InterfaceExtender_Modern.ini
         └── 📁 scripts/
-            └── 📄 gl_interface_extender.int
+            └── ⚙️ gl_interface_extender.int
 
 ℹ* Note: The available presets can be used as a foundation for your own custom settings.
 
