@@ -49,7 +49,7 @@ Fallout 2/
     └── 📁 InterfaceExtender/
         ├── 📄 InterfaceExtender.ini
         ├── 📁 presets/
-        │   └── 📄 InterfaceExtender_MODERN.ini
+        │   └── 📄 InterfaceExtender_Modern.ini
         └── 📁 scripts/
             └── 📄 gl_interface_extender.int
 ```
