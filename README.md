@@ -99,7 +99,7 @@ AdditionalCloseKey=TAB
 
 ; Adds a secondary shortcut to confirm or accept prompts and dialogs.
 ; Recommended: 'E' (same as in the modern fallout games).
-AdditionalAcceptKey=E
+AdditionalAcceptKey=
 
 ; Adds a secondary shortcut to end combat.
 ; Recommended: Set to the same key used to start combat or any preferred shortcut.
@@ -108,7 +108,7 @@ AdditionalEndCombatKey=G
 ; Customizes the "Take All" key in the loot interface.
 ; Recommended: 'R' (same as in the modern fallout games).
 ; Note: By engine default, "Take All" inherits whatever key is bound to 'Start Combat' (default 'A').
-TakeAllKey=R
+TakeAllKey=
 
 
 [KeyMap]
