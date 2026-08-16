@@ -39,11 +39,11 @@ Fallout 2/
     └── 📁 InterfaceExtender/
         ├── 📄 InterfaceExtender.ini
         ├── 📁 presets/
-        │   └── 📄 InterfaceExtender_MODERN.ini
+        │   └── 📄 InterfaceExtender_Modern.ini
         └── 📁 scripts/
             └── 📄 gl_interface_extender.int
 
-ℹ* Note: InterfaceExtender_MODERN.ini can be used as a foundation for your custom settings.
+ℹ* Note: The available presets can be used as a foundation for your own custom settings.
 
 
 --------------------------------------------------------------------------------------------------------------------------------
