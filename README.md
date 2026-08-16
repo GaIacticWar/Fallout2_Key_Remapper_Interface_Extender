@@ -39,10 +39,11 @@ Fallout 2/
         ├── ⚖️ LICENSE.txt
         ├── 📖 README.txt
         ├── 📁 presets/
-        │   └── 📝 InterfaceExtender_Modern.ini
+        │   └── 📄 InterfaceExtender_Modern.ini
         └── 📁 scripts/
             └── ⚙️ gl_interface_extender.int
 ```
+
 *\* Note: The available presets can be used as a foundation for your own custom settings.*
 
 ### 📝 Mod Activation
