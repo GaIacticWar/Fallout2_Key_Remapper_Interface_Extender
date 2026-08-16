@@ -75,7 +75,7 @@ InterfaceExtender
   3. `config\InterfaceExtender\InterfaceExtender.ini`
   4. `config\InterfaceExtender.ini`
   5. `data\scripts\InterfaceExtender.ini`
-  6. `.\InterfaceExtender.ini`
+  6. `InterfaceExtender.ini`
 
 ### ⌨️ Available Keys for .INI Configuration
 
