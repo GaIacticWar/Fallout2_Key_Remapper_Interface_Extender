@@ -32,7 +32,7 @@ customization, smart UI menu toggles and efficient key remapping with zero input
 | 🗃️ Directory Structure                                       |
 ----------------------------------------------------------------
 
-To install the mod manually or include it in your mod manager, structure your Fallout 2 directory as follows:
+    To install the mod manually or include it in your mod manager, structure your Fallout 2 directory as follows:
 
 Fallout 2/
 └── 📁 mods/
