@@ -12,23 +12,11 @@
 
 ## 📋 Key Features
 
-* **⚡ Ultra-Fast `O(1)` Key Remapper:**
-  Translates physical keys to target keys using fixed array lookup tables. Native action suppression prevents remapped targets from triggering duplicate inputs.
-  
-* **🧠 Smart UI Menu Toggles:**
-  Re-press the shortcut that opened a menu (Inventory <code>I</code>, Skilldex <code>S</code>, Pip-Boy Clock <code>Z</code>) to instantly close it.
-
-* **🔑 Global Menu Exit Key:**
-  Configure a single master key (e.g., <code>TAB</code> or <code>Q</code>) to exit almost any open UI screen (Inventory, Containers, Barter, Save/Load, Character Screen, Automap, Pip-Boy, Options).
-
-* **➕ Additional Action Keys:**
-  Dedicated configurable keys for accepting prompts, ending combat, and triggering "Take All" in container interfaces.
-
-* **🛡️ Context-Aware Input Protection:**
-  Automatically suspends custom bindings based on context (e.g., inside text fields for save game names when bound to printable letter/digit keys, preventing accidental inputs while typing).
-
-* **⚖️ Illegalities Validation:**
-  Detects conflicting bindings (e.g., identical Accept and Close bindings) and safely disables the conflict before input loops occur.
+* **⚡ Instant Key Remapping:** Easily rebind keys without input lag or duplicate actions.
+* **🧠 Smart UI Toggles:** Re-press any menu key (Inventory, Skilldex, Pip-Boy) to instantly close it.
+* **🔑 Global Exit Key:** Set a single master key (e.g., <code>TAB</code> or <code>Q</code>) to close any open UI screen.
+* **➕ Additional Binds:** Dedicated binds for "End Combat", "Accept" option in prompts and "Take All" in loot interfaces.
+* **🛡️ Context-Aware:** Suspends custom bindings based on context (e.g., in text fields), preventing unintentional inputs.
 
 ---
 
