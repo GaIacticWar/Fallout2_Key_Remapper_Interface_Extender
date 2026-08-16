@@ -53,7 +53,7 @@ Fallout 2/
         └── 📁 scripts/
             └── 📄 gl_interface_extender.int
 ```
-*\* Note: `InterfaceExtender_MODERN.ini` can be used as a foundation for your custom settings.*
+*\* Note: The available presets can be used as a foundation for your own custom settings.*
 
 ### 📝 Mod Activation
 
