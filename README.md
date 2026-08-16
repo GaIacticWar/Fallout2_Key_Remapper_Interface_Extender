@@ -130,7 +130,7 @@ F5 = Disabled ; Load Game
 
 ## 🛠️ Compiling from Source
 
-1. Ensure the `headers` folder (containing `sfall.h` and `dik.h`) is placed in the same directory as your src folder.
+1. Ensure the `headers` folder (containing `sfall.h` and `dik.h`) is placed in the same directory as your `src` folder.
 2. Open `gl_interface_extender.ssl` in Fallout Script Editor and compile it (**F8** / **Compile**).
 3. Move the compiled `gl_interface_extender.int` file to `mods/InterfaceExtender/scripts/`.
 4. Move, also, `InterfaceExtender.ini` to a valid path (e.g., `mods/InterfaceExtender/`).
