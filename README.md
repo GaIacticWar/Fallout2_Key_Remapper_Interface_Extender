@@ -61,6 +61,10 @@ Fallout 2/
 Open your sfall mod loading file (<code>mods_order.txt</code> or <code>mods_order.ini</code> inside your <code>mods/</code> folder) and add the mod folder name on a new line:
 </p>
 
+```text
+InterfaceExtender
+```
+
 ---
 
 ## ⚙️ Configuration (<small>`InterfaceExtender.ini`</small>)
