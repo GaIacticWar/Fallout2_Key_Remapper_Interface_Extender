@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="#">
     <img src="https://github.com/user-attachments/assets/85c84eb3-1e22-4741-b452-8dd5765b0b07" width="40%" alt="Fallout2 Logo" />
