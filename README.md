@@ -166,4 +166,3 @@ F5 = Disabled ; Load Game
 <a href="#">
 <img src="https://github.com/user-attachments/assets/6857b7ab-6799-4495-adaf-5cba3fe4827c" width="100%" height="1" />
 </a>
-&nbsp;
