@@ -38,7 +38,7 @@ Fallout 2/
 └── 📁 mods/
     └── 📁 InterfaceExtender/
         ├── 📝 InterfaceExtender.ini
-        ├── ⚖️ LICENSE.txt
+        ├── ⚖️ LICENSE
         ├── 📖 README.txt
         ├── 📁 presets/
         │   └── 📄 InterfaceExtender_Modern.ini
@@ -136,6 +136,6 @@ F5 = Disabled ; Load Game
 | 📜 [ LICENSE & PERMISSIONS ]                                                                                                 |
 --------------------------------------------------------------------------------------------------------------------------------
 
-    This project is released under custom terms. Please see the LICENSE.txt file for full details regarding personal use,
+    This project is released under custom terms. Please see the LICENSE file for full details regarding personal use,
 redistribution, and attribution.
 
