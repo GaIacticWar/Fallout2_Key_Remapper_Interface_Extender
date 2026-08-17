@@ -45,7 +45,7 @@ Fallout 2/
 └── 📁 mods/
     └── 📁 InterfaceExtender/
         ├── 📝 InterfaceExtender.ini
-        ├── ⚖️ LICENSE.txt
+        ├── ⚖️ LICENSE
         ├── 📖 README.txt
         ├── 📁 presets/
         │   └── 📄 InterfaceExtender_Modern.ini
