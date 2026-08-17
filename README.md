@@ -12,7 +12,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;A lightweight, high-performance sfall script for <b>Fallout 2</b> (and fan-made games built on its engine) that introduces modern control customization, smart UI menu toggles and efficient key remapping with zero input latency.
 </p>
 
----
+<a href="#">
+<img src="https://github.com/user-attachments/assets/6857b7ab-6799-4495-adaf-5cba3fe4827c" width="100%" height="1" />
+</a>
+&nbsp;
 
 ## 📋 Key Features
 
@@ -22,7 +25,10 @@
 * **➕ Additional Binds:** Dedicated keybinds to End Combat, Accept prompts, and "Take All" from containers.
 * **🛡️ Context-Aware:** Suspends bindings based on context (e.g., in text fields), preventing unintended inputs.
 
----
+<a href="#">
+<img src="https://github.com/user-attachments/assets/6857b7ab-6799-4495-adaf-5cba3fe4827c" width="100%" height="1" />
+</a>
+&nbsp;
 
 ## 📦 Installation
 
@@ -60,7 +66,10 @@ Fallout 2/
 InterfaceExtender
 ```
 
----
+<a href="#">
+<img src="https://github.com/user-attachments/assets/6857b7ab-6799-4495-adaf-5cba3fe4827c" width="100%" height="1" />
+</a>
+&nbsp;
 
 ## ⚙️ Configuration (<small>`InterfaceExtender.ini`</small>)
 
@@ -133,7 +142,10 @@ F5 = Disabled ; Load Game
 
 ```
 
----
+<a href="#">
+<img src="https://github.com/user-attachments/assets/6857b7ab-6799-4495-adaf-5cba3fe4827c" width="100%" height="1" />
+</a>
+&nbsp;
 
 ## 🛠️ Compiling from Source
 
@@ -142,8 +154,16 @@ F5 = Disabled ; Load Game
 3. Move the compiled `gl_interface_extender.int` file to `mods/InterfaceExtender/scripts/`.
 4. Move, also, `InterfaceExtender.ini` to a valid path (e.g., `mods/InterfaceExtender/`).
 
----
+<a href="#">
+<img src="https://github.com/user-attachments/assets/6857b7ab-6799-4495-adaf-5cba3fe4827c" width="100%" height="1" />
+</a>
+&nbsp;
 
 ## 📜 License & Permissions
 
 &nbsp;&nbsp;&nbsp;&nbsp;This project is released under custom terms. Please see the [LICENSE.txt](LICENSE.txt) file for full details regarding personal use, redistribution, and attribution.
+
+<a href="#">
+<img src="https://github.com/user-attachments/assets/6857b7ab-6799-4495-adaf-5cba3fe4827c" width="100%" height="1" />
+</a>
+&nbsp;
