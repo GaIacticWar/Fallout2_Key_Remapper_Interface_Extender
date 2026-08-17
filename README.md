@@ -160,7 +160,7 @@ F5 = Disabled ; Load Game
 
 ## 📜 License & Permissions
 
-&nbsp;&nbsp;&nbsp;&nbsp;This project is released under custom terms. Please see the [LICENSE.txt](LICENSE.txt) file for full details regarding personal use, redistribution, and attribution.
+&nbsp;&nbsp;&nbsp;&nbsp;This project is released under custom terms. Please see the [LICENSE](LICENSE) file for full details regarding personal use, redistribution, and attribution.
 
 <a href="#">
 <img src="https://github.com/user-attachments/assets/6857b7ab-6799-4495-adaf-5cba3fe4827c" width="100%" height="1" />
