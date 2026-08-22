@@ -1,34 +1,39 @@
-=================================================================================================
-|                                     LICENSE & PERMISSIONS                                     |
-=================================================================================================
-|                                                                                               |
-|  Copyright (c) 2026 GalacticWar                                                               |
-|                                                                                               |
-|      Permission is hereby granted to any person obtaining a copy of this software and         |
-| associated documentation files (the "Software"), to use, modify, and build upon the Software  |
-| for personal configurations or overhaul mod packs, subject to the following conditions:       |
-|                                                                                               |
-|  1. REDISTRIBUTION & COMPATIBILITY UPDATES                                                    |
-|   Standalone copies, modified versions, bug fixes, or compatibility patches for newer game    |
-|   versions may not be re-uploaded or redistributed to external hosts, databases, or mirror    |
-|   sites without prior explicit authorization from GalacticWar.                                |
-|                                                                                               |
-|  2. ATTRIBUTION                                                                               |
-|     If any core logic, algorithms, or code routines from this Software are reused in public   |
-|     scripts, derivative works, or other mods, credit to GalacticWar must be clearly included  |
-|     in the documentation and source code.                                                     |
-|                                                                                               |
-|  3. PAYWALLS & MONETIZATION                                                                   |
-|     This Software, its source code, and derivative works may not be sold, rented, or placed   |
-|     behind paywalls (such as Patreon-exclusive access or paid download sites). Ad-supported   |
-|     monetization (such as ad revenue on videos or website ads) is permitted as long as        |
-|     access remains free.                                                                      |
-|                                                                                               |
-|      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,      |
-|   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR    |
-|   PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE   |
-|      FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, OR TO       |
-|    OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER     |
-|                                   DEALINGS IN THE SOFTWARE.                                   |
-|                                                                                               |
-=================================================================================================
+===================================================================================================
+|                                      LICENSE & PERMISSIONS                                      |
+===================================================================================================
+|                                                                                                 |
+|  Copyright (c) 2026 GalacticWar                                                                 |
+|                                                                                                 |
+|     Permission is hereby granted to any person obtaining a copy of this software and associated |
+| documentation files (the "Software"), to use, modify, and build upon the Software for personal  |
+| configurations, private overhaul mod packs, or authorized public releases, subject to the       |
+| following conditions:                                                                           |
+|                                                                                                 |
+|   1. REDISTRIBUTION & COMPATIBILITY UPDATES                                                     |
+|    Standalone copies, modified versions, bug fixes, or compatibility patches for newer game     |
+|    versions may not be re-uploaded or redistributed to external hosts, databases, or mirror     |
+|    sites without prior explicit written authorization from GalacticWar.                         |
+|                                                                                                 |
+|   2. ATTRIBUTION & PUBLIC REUSE                                                                 |
+|    Core logic, algorithms, or code routines from this Software may NOT be reused or adapted in  |
+|    public scripts, standalone derivative works, or other published mods without prior explicit  |
+|    written authorization from GalacticWar. Where permission is granted, credit must be clearly  |
+|    included in the documentation, and optionally in the source code.                            |
+|                                                                                                 |
+|   3. ARTIFICIAL INTELLIGENCE & MACHINE LEARNING                                                 |
+|    This Software and its contents may NOT be used as training data, prompts, or input context   |
+|    for artificial intelligence tools, machine learning models, or automated code generators.    |
+|                                                                                                 |
+|   4. PAYWALLS & MONETIZATION                                                                    |
+|    This Software, its source code, and derivative works may not be sold, rented, or placed      |
+|    behind paywalls (such as Patreon-exclusive access or paid download sites). Ad-supported      |
+|    monetization (such as ad revenue on videos or website ads) is permitted as long as           |
+|    access remains free.                                                                         |
+|                                                                                                 |
+|  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING  |
+|   BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND    |
+|  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,   |
+|  DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, OR TO OTHERWISE, ARISING FROM,   |
+|     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.     |
+|                                                                                                 |
+===================================================================================================
