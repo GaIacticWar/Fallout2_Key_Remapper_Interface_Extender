@@ -10,11 +10,11 @@ customization, smart UI menu toggles and efficient key remapping with zero input
 | 📋 [ KEY FEATURES ]                                                                                                          |
 --------------------------------------------------------------------------------------------------------------------------------
 
-    ⚡ Instant Key Remapping: Easily rebind keys without input lag or duplicate actions.
-    🧠 Smart UI Toggles: Re-press any menu key (Inventory, Skilldex, Pip-Boy) to instantly close it.
-    🔑 Global Exit Key: Set a single master key (e.g., TAB or Q) to close any open UI screen.
-    ➕ Additional Binds: Dedicated keybinds to End Combat, Accept prompts, and "Take All" from containers.
-    🛡️ Context-Aware: Suspends bindings based on context (e.g., in text fields), preventing unintended inputs.
+  ⚡ Instant Key Remapping: Easily rebind keys without input lag or duplicate actions.
+  🧠 Smart UI Toggles: Re-press any menu key (Inventory, Skilldex, Pip-Boy) to instantly close it.
+  🔑 Global Exit Key: Set a single master key (e.g., TAB or Q) to close any open UI screen.
+  ➕ Additional Binds: Dedicated keybinds to End Combat, Accept prompts, and "Take All" from containers.
+  🛡️ Context-Aware: Suspends bindings based on context (e.g., in text fields), preventing unintended inputs.
 
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -25,8 +25,8 @@ customization, smart UI menu toggles and efficient key remapping with zero input
 | 📌 Prerequisites                                             |
 ----------------------------------------------------------------
 
-    * sfall (v3.8.40 or higher) is installed in your Fallout 2 root directory (ddraw.dll must be present).
-      Download: https://github.com/sfall-team/sfall
+  * sfall (v3.8.40 or higher) is installed in your Fallout 2 root directory (ddraw.dll must be present).
+    Download: https://github.com/sfall-team/sfall
 
 ----------------------------------------------------------------
 | 🗃️ Directory Structure                                       |
@@ -34,18 +34,18 @@ customization, smart UI menu toggles and efficient key remapping with zero input
 
     To install the mod manually or include it in your mod manager, structure your Fallout 2 directory as follows:
 
-    Fallout 2/
-    └── 📁 mods/
-        └── 📁 InterfaceExtender/
-            ├── 📝 InterfaceExtender.ini
-            ├── ⚖️ LICENSE
-            ├── 📖 README.txt
-            ├── 📁 presets/
-            │   └── 📄 InterfaceExtender_Modern.ini
-            └── 📁 scripts/
-                └── ⚙️ gl_interface_extender.int
+  Fallout 2/
+  └── 📁 mods/
+      └── 📁 InterfaceExtender/
+          ├── 📝 InterfaceExtender.ini
+          ├── ⚖️ LICENSE
+          ├── 📖 README.txt
+          ├── 📁 presets/
+          │   └── 📄 InterfaceExtender_Modern.ini
+          └── 📁 scripts/
+              └── ⚙️ gl_interface_extender.int
 
-    ℹ* Note: The available presets can be used as a foundation for your own custom settings.
+  ℹ* Note: The available presets can be used as a foundation for your own custom settings.
 
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -56,19 +56,19 @@ customization, smart UI menu toggles and efficient key remapping with zero input
 | 🔍 [ INI SEARCH HIERARCHY ]                                  |
 ----------------------------------------------------------------
 
-    1. mods\InterfaceExtender\InterfaceExtender.ini
-    2. mods\InterfaceExtender.ini
-    3. config\InterfaceExtender\InterfaceExtender.ini
-    4. config\InterfaceExtender.ini
-    5. data\scripts\InterfaceExtender.ini
-    6. InterfaceExtender.ini
+  1. mods\InterfaceExtender\InterfaceExtender.ini
+  2. mods\InterfaceExtender.ini
+  3. config\InterfaceExtender\InterfaceExtender.ini
+  4. config\InterfaceExtender.ini
+  5. data\scripts\InterfaceExtender.ini
+  6. InterfaceExtender.ini
 
 ----------------------------------------------------------------
 | ⌨️ AVAILABLE KEYS FOR .INI CONFIGURATION:                    |
 ----------------------------------------------------------------
 
-    ℹ* Note: Fallout 2 uses the US Keyboard Layout. If you use a non-US layout, test your desired key inside an in-game text window
-       (such as a save game name prompt) to verify input.
+  ℹ* Note: Fallout 2 uses the US Keyboard Layout. If you use a non-US layout, test your desired key inside an in-game text window
+     (such as a save game name prompt) to verify input.
 --------------------------------------------------------------------------------------------------------------------------------
 |                                         ℹ️ AVAILABLE KEYS FOR .INI CONFIGURATION ℹ️                                         |
 --------------------------------------------------------------------------------------------------------------------------------
